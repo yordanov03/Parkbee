@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Parkbee.WebUI.Data;
-using Parkbee.WebUI.Models;
+using Parkbee.Domain.Entities;
+using Parkbee.Infrastructure.Persistence;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;

@@ -2,9 +2,10 @@
 using Microsoft.AspNetCore.ApiAuthorization.IdentityServer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
-using Parkbee.WebUI.Models;
+using Parkbee.Domain.Entities;
+using Parkbee.Infrastructure.Identity;
 
-namespace Parkbee.WebUI.Data
+namespace Parkbee.Infrastructure.Persistence
 {
     public class ApplicationDbContext : ApiAuthorizationDbContext<ApplicationUser>
     {

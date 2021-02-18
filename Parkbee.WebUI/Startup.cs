@@ -6,8 +6,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Parkbee.WebUI.Data;
-using Parkbee.WebUI.Models;
+using Parkbee.Infrastructure.Identity;
+using Parkbee.Infrastructure.Persistence;
 
 namespace Parkbee.WebUI
 {

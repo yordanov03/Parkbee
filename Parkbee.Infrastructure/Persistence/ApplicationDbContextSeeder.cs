@@ -1,7 +1,7 @@
-﻿using Parkbee.WebUI.Models;
+﻿using Parkbee.Domain.Entities;
 using System.Linq;
 
-namespace Parkbee.WebUI.Data
+namespace Parkbee.Infrastructure.Persistence
 {
     public static class ApplicationDbContextSeeder
     {

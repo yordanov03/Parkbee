@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace Parkbee.WebUI.Models
+namespace Parkbee.Domain.Entities
 {
     public class Garage
     {
