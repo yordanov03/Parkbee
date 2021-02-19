@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Parkbee.Domain.Entities;
 using Parkbee.Infrastructure.Identity;
+using System.Reflection;
 
 namespace Parkbee.Infrastructure.Persistence
 {
@@ -13,6 +14,14 @@ namespace Parkbee.Infrastructure.Persistence
             DbContextOptions options,
             IOptions<OperationalStoreOptions> operationalStoreOptions) : base(options, operationalStoreOptions)
         {
+        }
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            builder.ApplyConfigurationsFromAssembly(
+                Assembly.GetExecutingAssembly());
+
+            base.OnModelCreating(builder);
         }
 
         public DbSet<Garage> Garages { get; set; }
