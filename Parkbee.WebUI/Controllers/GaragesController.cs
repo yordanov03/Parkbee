@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Parkbee.Application.Garages.Queries.GetGarages;
 using System.Threading.Tasks;
 
@@ -6,7 +7,7 @@ namespace Parkbee.WebUI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    //[Authorize]
+    [Authorize]
     public class GaragesController : ApiControllerBase
     {
 

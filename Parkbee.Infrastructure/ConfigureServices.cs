@@ -21,6 +21,8 @@ namespace Parkbee.Infrastructure
             services.AddScoped<IApplicationDbContext>(provider =>
                 provider.GetRequiredService<ApplicationDbContext>());
 
+            services.AddScoped<IIdentityService, IdentityService>();
+
             services.AddDefaultIdentity<ApplicationUser>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 

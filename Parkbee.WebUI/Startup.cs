@@ -5,8 +5,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Parkbee.Application;
+using Parkbee.Application.Common.Interfaces;
 using Parkbee.Infrastructure;
 using Parkbee.WebUI.Filters;
+using Parkbee.WebUI.Services;
 
 namespace Parkbee.WebUI
 {
@@ -24,6 +26,9 @@ namespace Parkbee.WebUI
         {
             services.AddInfrastructureServices(Configuration);
             services.AddApplicationServices();
+
+            services.AddHttpContextAccessor();
+            services.AddScoped<ICurrentUserService, CurrentUserService>();
 
             services.AddDatabaseDeveloperPageExceptionFilter();
 
