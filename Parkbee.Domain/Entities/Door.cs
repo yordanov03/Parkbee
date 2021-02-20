@@ -1,6 +1,8 @@
-﻿namespace Parkbee.Domain.Entities
+﻿using Parkbee.Domain.Common;
+
+namespace Parkbee.Domain.Entities
 {
-    public class Door
+    public class Door : AuditableEntity
     {
         public int DoorId { get; set; }
 

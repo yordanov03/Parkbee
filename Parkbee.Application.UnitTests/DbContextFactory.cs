@@ -1,6 +1,8 @@
 ﻿using IdentityServer4.EntityFramework.Options;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
+using Moq;
+using Parkbee.Application.Common.Interfaces;
 using Parkbee.Infrastructure.Persistence;
 using System;
 
@@ -23,13 +25,13 @@ namespace Parkbee.Application.UnitTests
                         new TableConfiguration("PersistedGrants")
                 });
 
-            //var currentUserServiceMock = new Mock<ICurrentUserService>();
-            //currentUserServiceMock.Setup(m => m.UserId)
-            //    .Returns("00000000-0000-0000-0000-000000000000");
+            var currentUserServiceMock = new Mock<ICurrentUserService>();
+            currentUserServiceMock.Setup(m => m.UserId)
+                .Returns("00000000-0000-0000-0000-000000000000");
 
             var context = new ApplicationDbContext(
-                options, operationalStoreOptions
-/*                currentUserServiceMock.Object*/);
+                options, operationalStoreOptions,
+              currentUserServiceMock.Object);
 
             ApplicationDbContextSeeder.Seed(context);
 

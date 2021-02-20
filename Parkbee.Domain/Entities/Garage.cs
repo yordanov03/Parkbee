@@ -1,8 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using Parkbee.Domain.Common;
+using System.Collections.Generic;
 
 namespace Parkbee.Domain.Entities
 {
-    public class Garage
+    public class Garage : AuditableEntity
     {
 
         public int GarageId { get; set; }
