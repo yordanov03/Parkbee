@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Parkbee.Domain.Entities;
 using Parkbee.Infrastructure.Persistence;
@@ -28,6 +29,9 @@ namespace Parkbee.WebUI.Controllers
 
         // GET: api/Doors/5
         [HttpGet("{id}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesDefaultResponseType]
         public async Task<ActionResult<IEnumerable<Door>>> GetDoors(int id)
         {
             var doors = await _context.Doors.Where(d => d.GarageId == id).ToListAsync();

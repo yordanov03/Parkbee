@@ -2,13 +2,14 @@
 using Microsoft.AspNetCore.ApiAuthorization.IdentityServer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
+using Parkbee.Application.Common.Interfaces;
 using Parkbee.Domain.Entities;
 using Parkbee.Infrastructure.Identity;
 using System.Reflection;
 
 namespace Parkbee.Infrastructure.Persistence
 {
-    public class ApplicationDbContext : ApiAuthorizationDbContext<ApplicationUser>
+    public class ApplicationDbContext : ApiAuthorizationDbContext<ApplicationUser>, IApplicationDbContext
     {
         public ApplicationDbContext(
             DbContextOptions options,
@@ -26,5 +27,15 @@ namespace Parkbee.Infrastructure.Persistence
 
         public DbSet<Garage> Garages { get; set; }
         public DbSet<Door> Doors { get; set; }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder
+                .EnableDetailedErrors();
+
+            //optionsBuilder.AddInterceptors(_auditEntitiesSaveChangesInterceptor);
+
+            base.OnConfiguring(optionsBuilder);
+        }
     }
 }

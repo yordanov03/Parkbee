@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 
 namespace Parkbee.Domain.Entities
 {
@@ -10,7 +9,7 @@ namespace Parkbee.Domain.Entities
 
         public string Name { get; set; }
 
-        public List<Door> Doors { get; set; } = new List<Door>();
+        public IList<Door> Doors { get; set; } = new List<Door>();
 
         public int OwnerId { get; set; }
 

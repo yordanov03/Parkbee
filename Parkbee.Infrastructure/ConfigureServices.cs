@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Parkbee.Application.Common.Interfaces;
 using Parkbee.Infrastructure.Identity;
 using Parkbee.Infrastructure.Persistence;
 
@@ -17,7 +18,7 @@ namespace Parkbee.Infrastructure
                 options.UseSqlServer(
                     configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddScoped<ApplicationDbContext>(provider =>
+            services.AddScoped<IApplicationDbContext>(provider =>
                 provider.GetRequiredService<ApplicationDbContext>());
 
             services.AddDefaultIdentity<ApplicationUser>()

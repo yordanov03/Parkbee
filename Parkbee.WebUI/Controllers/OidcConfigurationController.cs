@@ -4,6 +4,7 @@ using Microsoft.Extensions.Logging;
 
 namespace Parkbee.WebUI.Controllers
 {
+    [ApiExplorerSettings(IgnoreApi = true)]
     public class OidcConfigurationController : Controller
     {
         private readonly ILogger<OidcConfigurationController> _logger;
@@ -17,7 +18,7 @@ namespace Parkbee.WebUI.Controllers
         public IClientRequestParametersProvider ClientRequestParametersProvider { get; }
 
         [HttpGet("_configuration/{clientId}")]
-        public IActionResult GetClientRequestParameters([FromRoute]string clientId)
+        public IActionResult GetClientRequestParameters([FromRoute] string clientId)
         {
             var parameters = ClientRequestParametersProvider.GetClientParameters(HttpContext, clientId);
             return Ok(parameters);
