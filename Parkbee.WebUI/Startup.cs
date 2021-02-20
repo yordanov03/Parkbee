@@ -1,15 +1,12 @@
-using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Parkbee.Infrastructure.Identity;
-using Parkbee.Infrastructure.Persistence;
-using Parkbee.Infrastructure;
 using Parkbee.Application;
+using Parkbee.Infrastructure;
+using Parkbee.WebUI.Filters;
 
 namespace Parkbee.WebUI
 {
@@ -30,7 +27,8 @@ namespace Parkbee.WebUI
 
             services.AddDatabaseDeveloperPageExceptionFilter();
 
-            services.AddControllersWithViews();
+            services.AddControllersWithViews(options =>
+                options.Filters.Add(new ApiExceptionFilterAttribute()));
             services.AddRazorPages();
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>

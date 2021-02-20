@@ -5,6 +5,7 @@ using Microsoft.Extensions.Options;
 using Parkbee.Application.Common.Interfaces;
 using Parkbee.Domain.Entities;
 using Parkbee.Infrastructure.Identity;
+using System;
 using System.Reflection;
 
 namespace Parkbee.Infrastructure.Persistence
@@ -32,6 +33,7 @@ namespace Parkbee.Infrastructure.Persistence
         {
             optionsBuilder
                 .EnableDetailedErrors();
+            optionsBuilder.LogTo(Console.WriteLine);
 
             //optionsBuilder.AddInterceptors(_auditEntitiesSaveChangesInterceptor);
 

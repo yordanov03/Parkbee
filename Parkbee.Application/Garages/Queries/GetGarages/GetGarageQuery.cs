@@ -13,13 +13,13 @@ namespace Parkbee.Application.Garages.Queries.GetGarages
         public int Id { get; set; }
     }
 
-    public class GetAllGaragesQueryHandler
+    public class GetGarageQueryHandler
         : IRequestHandler<GetGarageQuery, GarageVm>
     {
         private readonly IApplicationDbContext _context;
         private readonly IMapper _mapper;
 
-        public GetAllGaragesQueryHandler(IApplicationDbContext context, IMapper mapper)
+        public GetGarageQueryHandler(IApplicationDbContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;

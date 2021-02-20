@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parkbee.Application", "Park
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parkbee.Infrastructure", "Parkbee.Infrastructure\Parkbee.Infrastructure.csproj", "{5A90943B-6C21-4011-9F3C-39FD0144E92D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parkbee.Application.UnitTests", "Parkbee.Application.UnitTests\Parkbee.Application.UnitTests.csproj", "{9C59D914-506D-4008-A2AC-FA0CE719F544}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -72,5 +74,17 @@ Global
 		{5A90943B-6C21-4011-9F3C-39FD0144E92D}.Release|x64.Build.0 = Release|Any CPU
 		{5A90943B-6C21-4011-9F3C-39FD0144E92D}.Release|x86.ActiveCfg = Release|Any CPU
 		{5A90943B-6C21-4011-9F3C-39FD0144E92D}.Release|x86.Build.0 = Release|Any CPU
+		{9C59D914-506D-4008-A2AC-FA0CE719F544}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C59D914-506D-4008-A2AC-FA0CE719F544}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C59D914-506D-4008-A2AC-FA0CE719F544}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{9C59D914-506D-4008-A2AC-FA0CE719F544}.Debug|x64.Build.0 = Debug|Any CPU
+		{9C59D914-506D-4008-A2AC-FA0CE719F544}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{9C59D914-506D-4008-A2AC-FA0CE719F544}.Debug|x86.Build.0 = Debug|Any CPU
+		{9C59D914-506D-4008-A2AC-FA0CE719F544}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C59D914-506D-4008-A2AC-FA0CE719F544}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C59D914-506D-4008-A2AC-FA0CE719F544}.Release|x64.ActiveCfg = Release|Any CPU
+		{9C59D914-506D-4008-A2AC-FA0CE719F544}.Release|x64.Build.0 = Release|Any CPU
+		{9C59D914-506D-4008-A2AC-FA0CE719F544}.Release|x86.ActiveCfg = Release|Any CPU
+		{9C59D914-506D-4008-A2AC-FA0CE719F544}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
