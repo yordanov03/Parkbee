@@ -34,6 +34,7 @@ namespace Parkbee.Infrastructure.Persistence
 
         public DbSet<Garage> Garages { get; set; }
         public DbSet<Door> Doors { get; set; }
+        public DbSet<DoorStatusHistory> DoorStatusHistory { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

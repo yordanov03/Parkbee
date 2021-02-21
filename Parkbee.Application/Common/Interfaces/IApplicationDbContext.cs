@@ -10,6 +10,7 @@ namespace Parkbee.Application.Common.Interfaces
         public DbSet<Garage> Garages { get; set; }
 
         public DbSet<Door> Doors { get; set; }
+        public DbSet<DoorStatusHistory> DoorStatusHistory { get; set; }
 
         Task<int> SaveChangesAsync(CancellationToken cancellationToken);
     }

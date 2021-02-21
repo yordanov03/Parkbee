@@ -15,20 +15,16 @@ namespace Parkbee.Infrastructure.Persistence
             var list = new Garage
             {
                 Name = "Garage 1",
-                //GarageId = 1,
                 Status = Status.Online,
                 OwnerId = 1,
+                CreatedBy = "Admin",
                 Doors =
                 {
-                    //new Door {DoorId = 1,  GarageId = 1, Status = Status.Online },
-                    //new Door {DoorId = 2,  GarageId = 1, Status = Status.Online },
-                    //new Door { DoorId = 3, GarageId = 1, Status = Status.Online },
-                    //new Door { DoorId = 4, GarageId = 1, Status = Status.Offline }
 
                     new Door {  GarageId = 1, Status = Status.Online },
                     new Door {  GarageId = 1, Status = Status.Online },
                     new Door {  GarageId = 1, Status = Status.Online },
-                    new Door { GarageId = 1, Status = Status.Offline }
+                    new Door {  GarageId = 1, Status = Status.Offline }
                 }
 
 

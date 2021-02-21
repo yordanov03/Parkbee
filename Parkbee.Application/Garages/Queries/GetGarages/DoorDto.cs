@@ -10,6 +10,8 @@ namespace Parkbee.Application.Garages.Queries.GetGarages
 
         public int GarageId { get; set; }
 
+        public string IPAddress { get; set; }
+
         //public Garage Garage { get; set; }
 
         public Status Status { get; set; }
@@ -19,8 +21,20 @@ namespace Parkbee.Application.Garages.Queries.GetGarages
             profile.CreateMap<Door, DoorDto>()
                 .ForMember(d => d.DoorId, opt => opt.MapFrom(s => s.DoorId))
                 .ForMember(d => d.GarageId, opt => opt.MapFrom(s => s.GarageId))
-                .ForMember(d => d.Status, opt =>
-                    opt.MapFrom(s => (int)s.Status));
+                .ForMember(d => d.IPAddress, opt => opt.MapFrom(s => s.IPAddress));
+
+
+            //profile.CreateMap<DoorDto, Door>()
+            //    .ForMember(d => d.DoorId, opt => opt.MapFrom(s => s.DoorId))
+            //    .ForMember(d => d.GarageId, opt => opt.MapFrom(s => s.GarageId))
+            //    .ForMember(d => d.IPAddress, opt => opt.MapFrom(s => s.IPAddress));
+            //.ForMember(d => d.Status, opt =>
+            //    opt.MapFrom(s => StatusChange(s.Status)));
         }
+
+        //private int StatusChange(int v)
+        //{
+        //    (int)s.SetStatus(s.Status);
+        //}
     }
 }

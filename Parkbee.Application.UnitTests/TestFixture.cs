@@ -1,10 +1,7 @@
 ﻿using AutoMapper;
+using Parkbee.Application.Common.Interfaces;
 using Parkbee.Infrastructure.Persistence;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Parkbee.Application.UnitTests
 {
@@ -19,6 +16,7 @@ namespace Parkbee.Application.UnitTests
         public ApplicationDbContext Context { get; }
 
         public IMapper Mapper { get; }
+        public IDoorApiClient DoorApiClient { get; }
 
         public void Dispose()
         {
