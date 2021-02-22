@@ -19,7 +19,6 @@ garage: Garage;
       }, error => console.error(error));
 }
 
-onRefresh(){}
 
 
 //   constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {

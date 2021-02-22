@@ -1,16 +1,16 @@
-<h1 id="tableLabel">Garage</h1>
+<h1 id="tableLabel">My Garage</h1>
 
-<p>This component demonstrates fetching data from the server.</p>
-
+<p>{{garage.garage.name}} {{garage.garage.status? "online": "offline"}}</p>
+<button class="btn btn-primary"(click)= 'onInit()'>Reload</button>
 <p *ngIf="!garage"><em>Loading...</em></p>
 
+<br>
 <table class='table table-striped' aria-labelledby="tableLabel" *ngIf="garage">
   <thead>
     <tr>
       <th>Door</th>
       <th>Ip Address</th>
       <th>Status</th>
-      <th>Reload</th>
     </tr>
   </thead>
   <tbody>
@@ -18,7 +18,6 @@
       <td>Door {{door.doorId}}</td>
       <td>{{ door.ipAddress }}</td>
       <td>{{ door.status? "online": "offline" }}</td>
-      <td><button class="btn btn-primary"(click)= 'onRefresh()'>Reload</button></td>
     </tr>
   </tbody>
 </table>
