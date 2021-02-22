@@ -7,7 +7,8 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-garage',
-  templateUrl: './garage.component.html'
+  templateUrl: './garage.component.html',
+  styleUrls: ['./garage.component.css']
 })
 export class GarageComponent implements OnInit {
 garage: Garage;
@@ -19,6 +20,9 @@ garage: Garage;
       }, error => console.error(error));
 }
 
+onReload(){
+  this.ngOnInit();
+}
 
 
 //   constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {

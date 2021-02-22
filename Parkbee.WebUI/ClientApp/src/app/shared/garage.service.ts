@@ -4,7 +4,6 @@ import { Garage } from "../garage/garage.model";
 
 @Injectable({providedIn: 'root'})
 export class GarageService{
-readonly rootUrl = ''
     @Inject('BASE_URL') baseUrl: string
     garage: any[];
     constructor(private http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
