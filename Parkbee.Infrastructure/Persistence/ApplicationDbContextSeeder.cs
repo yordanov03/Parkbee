@@ -21,10 +21,10 @@ namespace Parkbee.Infrastructure.Persistence
                 Doors =
                 {
 
-                    new Door {  GarageId = 1, Status = Status.Online },
-                    new Door {  GarageId = 1, Status = Status.Online },
-                    new Door {  GarageId = 1, Status = Status.Online },
-                    new Door {  GarageId = 1, Status = Status.Offline }
+                    new Door {  GarageId = 1, Status = Status.Online, IPAddress = "123.456.789" },
+                    new Door {  GarageId = 1, Status = Status.Online, IPAddress = "023.456.789" },
+                    new Door {  GarageId = 1, Status = Status.Online, IPAddress = "023.446.789" },
+                    new Door {  GarageId = 1, Status = Status.Offline, IPAddress = "023.456.289"}
                 }
 
 

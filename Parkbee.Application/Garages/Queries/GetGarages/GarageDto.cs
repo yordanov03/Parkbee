@@ -11,5 +11,7 @@ namespace Parkbee.Application.Garages.Queries.GetGarages
         public string Name { get; set; }
 
         public IList<DoorDto> Doors { get; set; }
+
+        public Status Status { get; set; }
     }
 }

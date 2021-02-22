@@ -5,13 +5,13 @@ using System.Threading.Tasks;
 
 namespace Parkbee.WebUI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     [Authorize]
     public class GaragesController : ApiControllerBase
     {
 
-        // GET: api/Garages
+        // GET: Garages
         [HttpGet]
         public async Task<ActionResult<GarageVm>> GetGarage()
         {
