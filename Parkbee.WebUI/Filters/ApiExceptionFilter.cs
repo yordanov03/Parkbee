@@ -42,9 +42,6 @@ namespace Parkbee.WebUI.Filters
                 HandleInvalidModelStateException(context);
                 return;
             }
-
-            // TODO: Need to improve the development environment experience when handling an unknown exception.
-            // HandleUnknownException(context);
         }
 
         private void HandleValidationException(ExceptionContext context)
