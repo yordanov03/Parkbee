@@ -1,6 +1,6 @@
 <h1 id="tableLabel">My Garage</h1>
 
-<p>{{garage.garage.name}} {{garage.garage.status? "offline": "online"}}</p>
+<p>{{garage.garage.name}}: {{garage.garage.status? "offline": "online"}}</p>
 <button class="btn btn-primary"(click)= 'onReload()'>Reload</button>
 <p *ngIf="!garage"><em>Loading...</em></p>
 
@@ -17,7 +17,10 @@
     <tr *ngFor="let door of garage.garage.doors">
       <td>Door {{door.doorId}}</td>
       <td>{{ door.ipAddress }}</td>
-      <td><span class="indicator online"></span></td>
+      <!-- <td>{{door.status? 'offline' : 'online'}}</td> -->
+      <td><span class="indicator offline" *ngIf ="door.status==0" ></span>
+        <span class="indicator online" *ngIf ="door.status==1" ></span>
+      </td>
     </tr>
   </tbody>
 </table>

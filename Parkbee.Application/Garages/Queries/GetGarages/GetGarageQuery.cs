@@ -39,7 +39,7 @@ namespace Parkbee.Application.Garages.Queries.GetGarages
         }
 
         /// <summary>
-        /// 
+        /// Return a GarageVm with details
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
@@ -52,28 +52,38 @@ namespace Parkbee.Application.Garages.Queries.GetGarages
                                 .ProjectTo<GarageDto>(_mapper.ConfigurationProvider)
                                 .FirstOrDefaultAsync(cancellationToken);
 
-            foreach (var d in myGarage.Doors)
-            {
-                Status doorStatus = await PingDoorStatusAsync(d.IPAddress);
-
-                if (d.Status != doorStatus)
-                {
-                    var prevStatus = d.Status;
-                    d.Status = doorStatus;
-
-                    await UpdateDoorStatus(d, cancellationToken);
-
-                    await AddDoorStatusEntryToHistory(d, prevStatus);
-
-                    await _context.SaveChangesAsync(cancellationToken);
-                }
-            }
+            await CheckDoorStatus(myGarage, cancellationToken);
 
             return new GarageVm
             {
                 Garage = myGarage
             };
 
+        }
+
+        private async Task CheckDoorStatus(GarageDto myGarage, CancellationToken cancellationToken)
+        {
+            foreach (var d in myGarage.Doors)
+            {
+                Status doorStatus = await PingDoorStatusAsync(d.IPAddress);
+
+                if (d.Status != doorStatus)
+                {
+                    await ProcessDoorStatus(d, doorStatus, cancellationToken);
+                }
+            }
+        }
+
+        private async Task ProcessDoorStatus(DoorDto d, Status doorStatus, CancellationToken cancellationToken)
+        {
+            var prevStatus = d.Status;
+            d.Status = doorStatus;
+
+            await UpdateDoorStatus(d, cancellationToken);
+
+            await AddDoorStatusEntryToHistory(d, prevStatus);
+
+            await _context.SaveChangesAsync(cancellationToken);
         }
 
         private async Task UpdateDoorStatus(DoorDto dto, CancellationToken cancellationToken)
